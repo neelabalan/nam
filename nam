@@ -1,0 +1,21 @@
+NAMDIR="$HOME/.nam"
+nam() 
+{
+    local files=""
+    local comm="$*"
+    if [[ $comm == "" ]]; then
+        files="$(rg --files $NAMDIR | fzf --delimiter / --with-nth -1 --preview 'batcat -l md --theme TwoDark --color "always" {}')"
+        if [[ -n $files ]]; then
+            batcat -l md --theme TwoDark --color "always" $files
+        fi
+    elif [[ $1 == "-e" ]]; then
+        vim $NAMDIR/$2
+    elif [[ $1 == "-b" ]]; then
+        history | cut -c 8- | head -n -1 | tail -n $2 >> $NAMDIR/$3
+    else
+        $(cat $NAMDIR/$comm | fzf --height 40%)
+    fi
+}
+
+nam $*
+
