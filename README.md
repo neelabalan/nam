@@ -33,3 +33,5 @@ nam -e <command>
 nam -b 2 bookmark
 ```
 
+> note: the function `nam` can be copied over to .bashrc if you don't want to include it in your PATH
+
