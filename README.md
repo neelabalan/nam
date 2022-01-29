@@ -1,3 +1,6 @@
+Checkout [cm](https://github.com/neelabalan/cm). This repository is now archived. I am no longer using this.
+
+
 # nam (not a manpage)
 > ( man->nam )
 > I had a look at `cheat.sh`, `cheat` and `tldr` but wanted something simpler
